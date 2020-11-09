@@ -1,0 +1,15 @@
+D:\C# Coursework\TrackTrace\bin\Debug\TrackTrace.exe.config
+D:\C# Coursework\TrackTrace\bin\Debug\TrackTrace.exe
+D:\C# Coursework\TrackTrace\bin\Debug\TrackTrace.pdb
+D:\C# Coursework\TrackTrace\obj\Debug\TrackTrace.csprojAssemblyReference.cache
+D:\C# Coursework\TrackTrace\obj\Debug\MainWindow.g.cs
+D:\C# Coursework\TrackTrace\obj\Debug\App.g.cs
+D:\C# Coursework\TrackTrace\obj\Debug\TrackTrace_MarkupCompile.cache
+D:\C# Coursework\TrackTrace\obj\Debug\TrackTrace_MarkupCompile.lref
+D:\C# Coursework\TrackTrace\obj\Debug\MainWindow.baml
+D:\C# Coursework\TrackTrace\obj\Debug\TrackTrace.g.resources
+D:\C# Coursework\TrackTrace\obj\Debug\TrackTrace.Properties.Resources.resources
+D:\C# Coursework\TrackTrace\obj\Debug\TrackTrace.csproj.GenerateResource.cache
+D:\C# Coursework\TrackTrace\obj\Debug\TrackTrace.csproj.CoreCompileInputs.cache
+D:\C# Coursework\TrackTrace\obj\Debug\TrackTrace.exe
+D:\C# Coursework\TrackTrace\obj\Debug\TrackTrace.pdb
