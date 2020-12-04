@@ -6,10 +6,17 @@ using System.Threading.Tasks;
 
 namespace TrackTrace.Business
 {
-    class Event : Location
+    /// <summary>
+    /// Author: Cameron Hunt
+    /// Date last modified: 03/12/2020
+    /// This class contains inheritable properties for the classes VisitSingleton and ContactSingleton to use.
+    /// </summary>
+    [Serializable]
+    public class Event : User
     {
         private string date;
         private string time;
+        private string location;
 
         public string Date
         {
@@ -20,6 +27,11 @@ namespace TrackTrace.Business
         {
             get { return time; }
             set { time = value; }
+        }
+        public string Location
+        {
+            get { return location; }
+            set { location = value; }
         }
     }
 }
