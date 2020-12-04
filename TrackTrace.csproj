@@ -63,12 +63,13 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Business\Contact.cs" />
+    <Compile Include="Business\ContactSingleton.cs" />
     <Compile Include="Business\Event.cs" />
-    <Compile Include="Business\Location.cs" />
-    <Compile Include="Business\User.cs" />
-    <Compile Include="Business\Visit.cs" />
-    <Compile Include="Data\GenerateCSV.cs" />
+    <Compile Include="Business\LocationSingleton.cs" />
+    <Compile Include="Business\UserSingleton.cs" />
+    <Compile Include="Business\VisitSingleton.cs" />
+    <Compile Include="Data\GenerateCSVSingleton.cs" />
+    <Compile Include="Data\Serialize.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
