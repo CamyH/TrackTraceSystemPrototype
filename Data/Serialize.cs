@@ -11,7 +11,7 @@ namespace TrackTrace.Data
 {
     /// <summary>
     /// Author: Cameron Hunt
-    /// Date last modified: 03/12/2020
+    /// Date last modified: 06/12/2020
     /// This class is for serializing lists of objects. It has one method for Serialization and one method for Deserialization.
     /// </summary>
     [Serializable]
@@ -30,7 +30,7 @@ namespace TrackTrace.Data
             }
         }*/
 
-        public void ExportToFile(List<User> list)
+        public void ExportToFile<T>(List<T> list)
         {
             // Serialization
             using (Stream stream = File.Open(serializationFile, FileMode.Create))
@@ -39,14 +39,14 @@ namespace TrackTrace.Data
                 binaryFormatter.Serialize(stream, list);
             }
         }
-        public List<User> ImportFromFile()
+        public List<UserSingleton> ImportFromFile()
         {
             // Deserialization
-            List<User> importedUsers = new List<User>();
+            List<UserSingleton> importedUsers = new List<UserSingleton>();
             using (Stream stream = File.Open(serializationFile, FileMode.Open))
             {
                 var binaryFormatter = new System.Runtime.Serialization.Formatters.Binary.BinaryFormatter();
-                importedUsers = (List<User>)binaryFormatter.Deserialize(stream);
+                importedUsers = (List<UserSingleton>)binaryFormatter.Deserialize(stream);
             }
             return importedUsers;
         }

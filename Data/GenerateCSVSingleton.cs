@@ -10,7 +10,7 @@ namespace TrackTrace.Data
 {
     /// <summary>
     /// Author: Cameron Hunt
-    /// Date last modified: 03/12/2020
+    /// Date last modified: 06/12/2020
     /// This class provides a method for exporting the data to a csv file
     /// It uses the Singleton design pattern.
     /// </summary>
@@ -34,10 +34,10 @@ namespace TrackTrace.Data
             }
         }
 
-        public void GenerateCSV(List<User> userData, List<LocationSingleton> locationData, List<VisitSingleton> visitData, List<ContactSingleton> contactData)
+        public void GenerateCSV(List<UserSingleton> userData, List<LocationSingleton> locationData, List<VisitSingleton> visitData, List<ContactSingleton> contactData)
         {
-            StreamWriter writer = new StreamWriter(File.OpenWrite(@"D:\C# Coursework\TrackTrace\Test.csv"));
-            foreach (User user in userData)
+            StreamWriter writer = new StreamWriter(File.OpenWrite(@"D:\C# Coursework\TrackTrace\Data.csv"));
+            foreach (UserSingleton user in userData)
             {
                 writer.WriteLine("User Data:");
                 writer.WriteLine(user.UserId);
