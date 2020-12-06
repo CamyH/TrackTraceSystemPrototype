@@ -8,27 +8,27 @@ namespace TrackTrace.Business
 {
     /// <summary>
     /// Author: Cameron Hunt
-    /// Date last modified: 03/12/2020
+    /// Date last modified: 06/12/2020
     /// This class is for creating and storing new users. It has one method for creating a new user.
     /// It uses the Singleton design pattern.
     /// </summary>
     [Serializable]
-    public class User
+    public class UserSingleton
     {
-        private List<User> users = new List<User>();
+        private List<UserSingleton> users = new List<UserSingleton>();
         private List<int> idList = new List<int>();
-        private static User instance;
+        private static UserSingleton instance;
         private string userId;
         private string phoneNumber;
-        protected User() { }
+        protected UserSingleton() { }
 
-        public static User Instance
+        public static UserSingleton Instance
         {
             get
             {
                 if (instance == null)
                 {
-                    instance = new User();
+                    instance = new UserSingleton();
                 }
                 return instance;
             }
@@ -43,18 +43,18 @@ namespace TrackTrace.Business
             get { return phoneNumber; }
             set { phoneNumber = value; }
         }
-        public List<User> Users
+        public List<UserSingleton> Users
         {
             get { return users; }
         }
         public void NewUser(string number)
         {
             // Method for creating a new User object and adding it to the list. Each user is assigned a unique random number for their userId.
-            User user = new User();
+            UserSingleton user = new UserSingleton();
             // Generate new UNIQUE user id
             Random rand = new Random();
             int id = rand.Next(9999);
-            // While the generated id already exists, keep generating new ids to make sure it is unqiue.
+            // If the generated id already exists, keep generating new ids until it no longer exists to make sure it is unqiue.
             while (idList.Contains(id))
                 id = rand.Next(9999);
             user.UserId = Convert.ToString(id);

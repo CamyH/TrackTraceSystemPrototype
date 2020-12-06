@@ -8,13 +8,13 @@ namespace TrackTrace.Business
 {
     /// <summary>
     /// Author: Cameron Hunt
-    /// Date last modified: 03/12/2020
+    /// Date last modified: 06/12/2020
     /// This class is for recording and storing contact between two users. 
     /// It has one method for recording a new contact and one for finding all phone numbers of contacts of a specific user.
     /// It uses the Singleton design pattern.
     /// </summary>
     [Serializable]
-    class ContactSingleton : Event
+    class ContactSingleton : UserSingleton, IEventInfo
     {
         private List<ContactSingleton> contacts = new List<ContactSingleton>();
         private List<String> numbers = new List<string>();
@@ -34,6 +34,9 @@ namespace TrackTrace.Business
                 return instance;
             }
         }
+        public string Date { get; set; }
+        public string Time { get; set; }
+        public string Location { get; set; }
         public List<ContactSingleton> Contacts
         {
             get { return contacts; }
