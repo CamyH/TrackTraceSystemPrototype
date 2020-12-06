@@ -64,7 +64,7 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Business\ContactSingleton.cs" />
-    <Compile Include="Business\Event.cs" />
+    <Compile Include="Business\IEventInfo.cs" />
     <Compile Include="Business\LocationSingleton.cs" />
     <Compile Include="Business\UserSingleton.cs" />
     <Compile Include="Business\VisitSingleton.cs" />
