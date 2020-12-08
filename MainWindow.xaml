@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TrackTrace"
         mc:Ignorable="d"
-        Title="TrackTrace" Height="550" Width="950">
+        Title="TrackTrace" Height="600" Width="950">
     <Grid x:Name="MainPage" Margin="-4,5,4,-5">
         <Label x:Name="newPersonLbl" Content="Add a New User" HorizontalAlignment="Left" Margin="28,21,0,0" VerticalAlignment="Top" FontSize="18"/>
         <TextBox x:Name="phoneNumberTxt" HorizontalAlignment="Left" Height="23" Margin="32,82,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="147"/>
@@ -27,32 +27,29 @@
         <ComboBox x:Name="individualList1" HorizontalAlignment="Left" Margin="623,82,0,0" VerticalAlignment="Top" Width="143"/>
         <Label x:Name="selectIndividual2Lbl" Content="Select the second Individual:" HorizontalAlignment="Left" Margin="622,110,0,0" VerticalAlignment="Top"/>
         <ComboBox x:Name="individualList2" HorizontalAlignment="Left" Margin="622,138,0,0" VerticalAlignment="Top" Width="144"/>
-        <ListBox x:Name="contactList" HorizontalAlignment="Left" Height="248" Margin="151,203,0,0" VerticalAlignment="Top" Width="152"/>
-        <Label x:Name="choosePersonLbl" Content="Choose Inidividual:" HorizontalAlignment="Left" Margin="28,225,0,0" VerticalAlignment="Top" Width="104"/>
-        <ComboBox x:Name="chooseIndividualList" HorizontalAlignment="Left" Margin="32,256,0,0" VerticalAlignment="Top" Width="100"/>
-        <Label x:Name="chooseDateLbl" Content="Choose Date:" HorizontalAlignment="Left" Margin="28,291,0,0" VerticalAlignment="Top" Width="104"/>
-        <ComboBox x:Name="chooseTimeList" HorizontalAlignment="Left" Margin="32,388,0,0" VerticalAlignment="Top" Width="100"/>
-        <Button x:Name="generateListBtn" Content="Generate List" HorizontalAlignment="Left" Margin="32,431,0,0" VerticalAlignment="Top" Width="100" Click="generateListBtn_Click"/>
-        <Label x:Name="chooseTimeLbl" Content="Choose Time:" HorizontalAlignment="Left" Margin="32,356,0,0" VerticalAlignment="Top" Width="195"/>
-        <ComboBox x:Name="chooseDateList" HorizontalAlignment="Left" Margin="32,322,0,0" VerticalAlignment="Top" Width="100"/>
-        <Label x:Name="generateContactsFileLbl" Content="Contact List:" HorizontalAlignment="Left" Margin="28,186,0,0" VerticalAlignment="Top" FontSize="18" Width="104"/>
-        <Button x:Name="exportBtn" Content="Export" HorizontalAlignment="Left" Margin="819,436,0,0" VerticalAlignment="Top" Width="101" Click="ExportBtn_Click"/>
-        <Label x:Name="generatePeopleListLbl" Content="Find all visitors:" HorizontalAlignment="Left" Margin="385,191,0,0" VerticalAlignment="Top" FontSize="18"/>
-        <ListBox x:Name="visitedList" HorizontalAlignment="Left" Height="248" Margin="515,225,0,0" VerticalAlignment="Top" Width="152" RenderTransformOrigin="0.5,0.508"/>
-        <ComboBox x:Name="chooseVisitLocationList" HorizontalAlignment="Left" Margin="390,244,0,0" VerticalAlignment="Top" Width="110"/>
-        <Label x:Name="chooseLocationLbl" Content="Choose Location:" HorizontalAlignment="Left" Margin="385,219,0,0" VerticalAlignment="Top" Width="110" Height="24"/>
-        <Label x:Name="chooseVisitDateLbl" Content="Choose Date 1:" HorizontalAlignment="Left" Margin="389,268,0,0" VerticalAlignment="Top" Width="115"/>
-        <ComboBox x:Name="chooseVisitTimeList" HorizontalAlignment="Left" Margin="390,344,0,0" VerticalAlignment="Top" Width="113"/>
-        <Label x:Name="chooseVisitTimeLbl" Content="Choose Time 1:" HorizontalAlignment="Left" Margin="390,322,0,0" VerticalAlignment="Top" Width="113"/>
-        <ComboBox x:Name="chooseVisitDateList" HorizontalAlignment="Left" Margin="390,294,0,0" VerticalAlignment="Top" Width="113"/>
-        <Button x:Name="findVisitorsBtn" Content="Find all Visitors" HorizontalAlignment="Left" Margin="390,473,0,0" VerticalAlignment="Top" Width="112" Click="findVisitorsBtn_Click" Height="20"/>
-        <Label x:Name="chooseVisitDate2Lbl" Content="Choose Date 2:" HorizontalAlignment="Left" Margin="387,366,0,0" VerticalAlignment="Top" Width="115"/>
-        <ComboBox x:Name="chooseVisitDate2List" HorizontalAlignment="Left" Margin="390,391,0,0" VerticalAlignment="Top" Width="113"/>
-        <ComboBox x:Name="chooseVisitTime2List" HorizontalAlignment="Left" Margin="390,439,0,0" VerticalAlignment="Top" Width="113"/>
-        <Label x:Name="chooseVisitTime2Lbl" Content="Choose Time 2:" HorizontalAlignment="Left" Margin="388,413,0,0" VerticalAlignment="Top" Width="113"/>
-        <Button x:Name="importBtn" Content="Import" HorizontalAlignment="Left" Margin="819,478,0,0" VerticalAlignment="Top" Width="101" Click="importBtn_Click"/>
-        <ListBox x:Name="dataBox" HorizontalAlignment="Left" Height="186" Margin="799,224,0,0" VerticalAlignment="Top" Width="121"/>
-        <Button x:Name="clearBtn" Content="Clear" HorizontalAlignment="Left" Margin="515,483,0,0" VerticalAlignment="Top" Width="152" Click="clearBtn_Click"/>
+        <ListBox x:Name="contactList" HorizontalAlignment="Left" Height="248" Margin="151,217,0,0" VerticalAlignment="Top" Width="152"/>
+        <Label x:Name="choosePersonLbl" Content="Choose Inidividual:" HorizontalAlignment="Left" Margin="28,239,0,0" VerticalAlignment="Top" Width="114"/>
+        <ComboBox x:Name="chooseIndividualList" HorizontalAlignment="Left" Margin="32,270,0,0" VerticalAlignment="Top" Width="100"/>
+        <Label x:Name="chooseDateLbl" Content="Choose Date:" HorizontalAlignment="Left" Margin="28,305,0,0" VerticalAlignment="Top" Width="104"/>
+        <ComboBox x:Name="chooseTimeList" HorizontalAlignment="Left" Margin="32,402,0,0" VerticalAlignment="Top" Width="100"/>
+        <Button x:Name="generateListBtn" Content="Generate List" HorizontalAlignment="Left" Margin="32,445,0,0" VerticalAlignment="Top" Width="100" Click="generateListBtn_Click"/>
+        <Label x:Name="chooseTimeLbl" Content="Choose Time:" HorizontalAlignment="Left" Margin="32,370,0,0" VerticalAlignment="Top" Width="195"/>
+        <ComboBox x:Name="chooseDateList" HorizontalAlignment="Left" Margin="32,336,0,0" VerticalAlignment="Top" Width="100"/>
+        <Label x:Name="generateContactsFileLbl" Content="Contact List:" HorizontalAlignment="Left" Margin="28,200,0,0" VerticalAlignment="Top" FontSize="18" Width="104"/>
+        <Label x:Name="generatePeopleListLbl" Content="Find all visitors" HorizontalAlignment="Left" Margin="385,224,0,0" VerticalAlignment="Top" FontSize="18"/>
+        <ListBox x:Name="visitedList" HorizontalAlignment="Left" Height="248" Margin="515,258,0,0" VerticalAlignment="Top" Width="152" RenderTransformOrigin="0.5,0.508"/>
+        <ComboBox x:Name="chooseVisitLocationList" HorizontalAlignment="Left" Margin="390,277,0,0" VerticalAlignment="Top" Width="110"/>
+        <Label x:Name="chooseLocationLbl" Content="Choose Location:" HorizontalAlignment="Left" Margin="385,252,0,0" VerticalAlignment="Top" Width="110" Height="24"/>
+        <Label x:Name="chooseVisitDateLbl" Content="Choose Date 1:" HorizontalAlignment="Left" Margin="389,301,0,0" VerticalAlignment="Top" Width="115"/>
+        <ComboBox x:Name="chooseVisitTimeList" HorizontalAlignment="Left" Margin="390,377,0,0" VerticalAlignment="Top" Width="113"/>
+        <Label x:Name="chooseVisitTimeLbl" Content="Choose Time 1:" HorizontalAlignment="Left" Margin="390,355,0,0" VerticalAlignment="Top" Width="113"/>
+        <ComboBox x:Name="chooseVisitDateList" HorizontalAlignment="Left" Margin="390,327,0,0" VerticalAlignment="Top" Width="113"/>
+        <Button x:Name="findVisitorsBtn" Content="Find all Visitors" HorizontalAlignment="Left" Margin="390,506,0,0" VerticalAlignment="Top" Width="112" Click="findVisitorsBtn_Click" Height="20"/>
+        <Label x:Name="chooseVisitDate2Lbl" Content="Choose Date 2:" HorizontalAlignment="Left" Margin="387,399,0,0" VerticalAlignment="Top" Width="115"/>
+        <ComboBox x:Name="chooseVisitDate2List" HorizontalAlignment="Left" Margin="390,424,0,0" VerticalAlignment="Top" Width="113"/>
+        <ComboBox x:Name="chooseVisitTime2List" HorizontalAlignment="Left" Margin="390,472,0,0" VerticalAlignment="Top" Width="113"/>
+        <Label x:Name="chooseVisitTime2Lbl" Content="Choose Time 2:" HorizontalAlignment="Left" Margin="388,446,0,0" VerticalAlignment="Top" Width="113"/>
+        <Button x:Name="clearBtn" Content="Clear" HorizontalAlignment="Left" Margin="515,516,0,0" VerticalAlignment="Top" Width="152" Click="clearBtn_Click"/>
 
     </Grid>
 </Window>

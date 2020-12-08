@@ -20,7 +20,7 @@ namespace TrackTrace
 {
     /// <summary>
     /// Author: Cameron Hunt
-    /// Date of last modification: 06/12/2020;
+    /// Date of last modification: 08/12/2020;
     /// Interaction logic for MainWindow.xaml
     /// </summary>
     public partial class MainWindow : Window
@@ -33,7 +33,7 @@ namespace TrackTrace
         private void newIndividualBtn_Click(object sender, RoutedEventArgs e)
         {
             UserSingleton user = UserSingleton.Instance;
-            Serialize serialize = new Serialize();
+            GenerateCSVSingleton export = GenerateCSVSingleton.Instance;
             // Input Validation. Standard UK phone number length is 11 digits
             if (phoneNumberTxt.Text.Length == 11)
                 user.NewUser(phoneNumberTxt.Text);
@@ -50,12 +50,14 @@ namespace TrackTrace
                     individualList2.Items.Add(aUser.UserId);
                 }
             }
+            // Output data to CSV
+            export.GenerateCSVUser(user.Users);
         }
 
         private void newLocationBtn_Click(object sender, RoutedEventArgs e)
         {
             LocationSingleton newLocation = LocationSingleton.Instance;
-            Serialize serialize = new Serialize();
+            GenerateCSVSingleton export = GenerateCSVSingleton.Instance;
             // Invoking NewLocation method
             newLocation.NewLocation(locationTxt.Text);
             // Adding locations to location combo boxes, unless they already exist
@@ -64,11 +66,14 @@ namespace TrackTrace
                 if (!locationList.Items.Contains(aLocation.LocationName))
                     locationList.Items.Add(aLocation.LocationName);
             }
+            // Output data to CSV
+            export.GenerateCSVLocation(newLocation.Locations);
         }
 
         private void checkInBtn_Click(object sender, RoutedEventArgs e)
         {
             VisitSingleton visit = VisitSingleton.Instance;
+            GenerateCSVSingleton export = GenerateCSVSingleton.Instance;
             string date = Convert.ToString(System.DateTime.Now.ToString("dd/MM/yyyy"));
             string time = System.DateTime.Now.ToShortTimeString();
             // Adding location, date, time to combo boxes, unless already exist to avoid duplication
@@ -94,12 +99,15 @@ namespace TrackTrace
                 contactList.Items.Add(aVisit.Date);
                 contactList.Items.Add(aVisit.Time);
             }
+            // Output data to CSV
+            export.GenerateCSVVisit(visit.Visits);
         }
 
         private void recordContactBtn_Click(object sender, RoutedEventArgs e)
         {
             ContactSingleton newContact = ContactSingleton.Instance;
             UserSingleton user = UserSingleton.Instance;
+            GenerateCSVSingleton export = GenerateCSVSingleton.Instance;
             string individual1UserId = "";
             string individual2UserId = "";
             string individual2PhoneNumber = "";
@@ -127,6 +135,8 @@ namespace TrackTrace
                     
             }
             newContact.RecordContact(individual1UserId, individual2UserId, individual2PhoneNumber, date, time);
+            // Output data to CSV
+            export.GenerateCSVContact(newContact.Contacts);
         }
 
         private void generateListBtn_Click(object sender, RoutedEventArgs e)
@@ -139,24 +149,6 @@ namespace TrackTrace
             {
                 contactList.Items.Add(numbers[i]);
             }
-        }
-
-        private void ExportBtn_Click(object sender, RoutedEventArgs e)
-        {
-            GenerateCSVSingleton dataCSV = GenerateCSVSingleton.Instance;
-            UserSingleton user = UserSingleton.Instance;
-            LocationSingleton location = LocationSingleton.Instance;
-            VisitSingleton visit = VisitSingleton.Instance;
-            ContactSingleton contact = ContactSingleton.Instance;
-            List<UserSingleton> users = user.Users;
-            List<LocationSingleton> locations = location.Locations;
-            List<VisitSingleton> visits = visit.Visits;
-            List<ContactSingleton> contacts = contact.Contacts;
-            // Exporting Data to CSV file
-            dataCSV.GenerateCSV(users, locations, visits, contacts);
-            Serialize data = new Serialize();
-            // Exporting Data using serialization
-            data.ExportToFile(visit.Visits);
         }
 
         private void findVisitorsBtn_Click(object sender, RoutedEventArgs e)
@@ -174,23 +166,6 @@ namespace TrackTrace
             for(int i = 0; i < allVisits.Count; i++)
             {
                 visitedList.Items.Add(allVisits[i]);
-            }
-        }
-
-        private void importBtn_Click(object sender, RoutedEventArgs e)
-        {
-            List<UserSingleton> importedData = new List<UserSingleton>();
-            Serialize data = new Serialize();
-            // Importing data
-            importedData = data.ImportFromFile();
-            foreach(UserSingleton aUser in importedData)
-            {
-                userList.Items.Add(aUser.UserId);
-                individualList1.Items.Add(aUser.UserId);
-                individualList2.Items.Add(aUser.UserId);
-                chooseIndividualList.Items.Add(aUser.UserId);
-                dataBox.Items.Add(aUser.UserId);
-                dataBox.Items.Add(aUser.PhoneNumber);
             }
         }
 
