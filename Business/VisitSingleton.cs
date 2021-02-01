@@ -8,7 +8,7 @@ namespace TrackTrace.Business
 {
     /// <summary>
     /// Author: Cameron Hunt
-    /// Date last modified: 06/12/2020
+    /// Date last modified: 09/12/2020
     /// This class is for recording and storing new visits to locations. One method to record a new visit and one to find all visits.
     /// It uses the Singleton design pattern.
     /// </summary>
@@ -18,6 +18,7 @@ namespace TrackTrace.Business
         private List<VisitSingleton> visits = new List<VisitSingleton>();
         private List<String> allVisits = new List<String>();
         private static VisitSingleton instance;
+        private VisitSingleton currentVisit;
         protected VisitSingleton() { }
         public static VisitSingleton Instance
         {
@@ -34,6 +35,12 @@ namespace TrackTrace.Business
         {
             get { return visits; }
         }
+        public VisitSingleton CurrentVisit
+        {
+            get { return currentVisit; }
+            set { currentVisit = value; }
+        }
+        // Implementing Interface properties
         public string Date { get; set; }
         public string Time { get; set; }
         public string Location { get; set; }
@@ -45,9 +52,10 @@ namespace TrackTrace.Business
             visit.Date = date;
             visit.Time = time;
             visit.Location = location;
+            CurrentVisit = visit;
             visits.Add(visit);
         }
-        public List<String> findAllVisitors(string location, string firstDate, string secondDate, string firstTime, string secondTime)
+        public List<String> FindAllVisitors(string location, string firstDate, string secondDate, string firstTime, string secondTime)
         {
             // Method for finding all visitors to a specified location between two dates and times.
             UserSingleton user = UserSingleton.Instance;
