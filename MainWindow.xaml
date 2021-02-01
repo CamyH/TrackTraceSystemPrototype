@@ -32,7 +32,7 @@
         <ComboBox x:Name="chooseIndividualList" HorizontalAlignment="Left" Margin="32,270,0,0" VerticalAlignment="Top" Width="100"/>
         <Label x:Name="chooseDateLbl" Content="Choose Date:" HorizontalAlignment="Left" Margin="28,305,0,0" VerticalAlignment="Top" Width="104"/>
         <ComboBox x:Name="chooseTimeList" HorizontalAlignment="Left" Margin="32,402,0,0" VerticalAlignment="Top" Width="100"/>
-        <Button x:Name="generateListBtn" Content="Generate List" HorizontalAlignment="Left" Margin="32,445,0,0" VerticalAlignment="Top" Width="100" Click="generateListBtn_Click"/>
+        <Button x:Name="generateListBtn" Content="Find Contacts" HorizontalAlignment="Left" Margin="32,445,0,0" VerticalAlignment="Top" Width="100" Click="generateListBtn_Click"/>
         <Label x:Name="chooseTimeLbl" Content="Choose Time:" HorizontalAlignment="Left" Margin="32,370,0,0" VerticalAlignment="Top" Width="195"/>
         <ComboBox x:Name="chooseDateList" HorizontalAlignment="Left" Margin="32,336,0,0" VerticalAlignment="Top" Width="100"/>
         <Label x:Name="generateContactsFileLbl" Content="Contact List:" HorizontalAlignment="Left" Margin="28,200,0,0" VerticalAlignment="Top" FontSize="18" Width="104"/>
