@@ -1,5 +1,5 @@
 # TrackTraceSystemPrototype
-### This is a prototype track and trace system which allows users to keep track of individuals with whom they have come into contact with and the places that they have been.
+### This is a prototype track and trace system that allows users to keep track of individuals with whom they have come into contact with and the places that they have been.
 ### Features include:
 * Add a new individual.
 * Add a new location
